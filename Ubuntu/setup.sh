@@ -8,19 +8,6 @@ cat << EOF
 ╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝
 EOF
 echo "Ubuntu Setup Script"
-# Function to display loading spinner
-spinner() {
-    local pid=$1
-    local delay=0.1
-    local spinstr='|/-\'
-    while ps -p $pid > /dev/null; do
-        for i in ${spinstr}; do
-            echo -n -e "\b$i"
-            sleep $delay
-        done
-    done
-    echo -e "\b"
-}
 
 # Update package lists
 sudo apt update
@@ -30,6 +17,8 @@ sudo apt upgrade -y
 
 # Install the specified packages with loading animation
 packages_to_install=(
+    libssl-dev
+    pkg-config
     neovim
     tmux
     bpytop
