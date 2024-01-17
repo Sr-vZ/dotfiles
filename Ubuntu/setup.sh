@@ -19,6 +19,13 @@ sudo apt upgrade -y
 packages_to_install=(
     libssl-dev
     pkg-config
+    build-essential
+    fontconfig
+    git
+    ripgrep
+    fzf
+    zsh
+    bat
     neovim
     tmux
     bpytop
@@ -35,9 +42,16 @@ for package in "${packages_to_install[@]}"; do
 done
 
 # Install zellij (tmux alternative)
-cargo install zellij
+cargo install zellij exa
 
 # Add user to the docker group
 sudo usermod -aG docker $USER
+# use zsh as default
+# sudo chsh —s $(which zsh) $USER
+if command -v curl >/dev/null 2>&1; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+else
+  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+fi
 
 echo "System update and upgrade, installation, and configuration completed!"
