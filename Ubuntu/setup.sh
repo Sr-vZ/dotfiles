@@ -31,18 +31,17 @@ packages_to_install=(
     bpytop
     python3
     golang-go
-    rustc
-    cargo
+    # rustc
+    # cargo
     docker.io
 )
 
 for package in "${packages_to_install[@]}"; do
     sudo apt install -y "$package" &
-    spinner $!
 done
 
 # Install zellij (tmux alternative)
-cargo install zellij exa
+# cargo install zellij exa
 
 # Add user to the docker group
 sudo usermod -aG docker $USER
