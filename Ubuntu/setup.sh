@@ -57,4 +57,6 @@ wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/m
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.tmux.conf
 
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+
 echo "System update and upgrade, installation, and configuration completed!"
