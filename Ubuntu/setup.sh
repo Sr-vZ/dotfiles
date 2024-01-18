@@ -53,4 +53,8 @@ else
   sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 fi
 
+wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/main/nerd-fonts-downloader.sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.tmux.conf
+
 echo "System update and upgrade, installation, and configuration completed!"
