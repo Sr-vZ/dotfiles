@@ -19,15 +19,25 @@ sudo apt upgrade -y
 # Install the specified packages with loading animation
 packages_to_install=(
     libssl-dev
-    pkg-config
     build-essential
+    ninja-build
+    gettext
+    libtool
+    libtool-bin
+    autoconf
+    automake
+    cmake
+    g++
+    pkg-config
+    unzip
+    curl
+    doxygen
     fontconfig
     git
     ripgrep
     fzf
     zsh
     bat
-    neovim
     tmux
     bpytop
     python3
@@ -60,9 +70,15 @@ curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.
 
 
 
-wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-alias nvim=./nvim-linux64/bin/nvim
+# wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
+# tar xzvf nvim-linux64.tar.gz
+# alias nvim=./nvim-linux64/bin/nvim
+
+# Neovim latest stable version installation
+git clone https://github.com/neovim/neovim.git
+cd neovim
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
 
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 git clone https://github.com/LazyVim/starter ~/.config/nvim
