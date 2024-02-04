@@ -39,7 +39,7 @@ packages_to_install=(
     zsh
     bat
     tmux
-    bpytop
+    btop
     python3
     golang-go
     # rustc
