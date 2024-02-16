@@ -85,3 +85,4 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 echo "System update and upgrade, installation, and configuration completed!"
+# curl -L https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/Ubuntu/setup.sh | sh
