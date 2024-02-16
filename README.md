@@ -6,6 +6,6 @@ No idea why I didn't thought about this sooner!!! 🤦‍♂️
 
 
 ## Install Ubuntu install script
-'''
+`
 curl -L https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/Ubuntu/setup.sh | sh
-'''
+`
