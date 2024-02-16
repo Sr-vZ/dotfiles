@@ -44,7 +44,8 @@ packages_to_install=(
     golang-go
     # rustc
     # cargo
-    docker.io
+    # docker.io
+    podman
 )
 
 for package in "${packages_to_install[@]}"; do
