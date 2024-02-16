@@ -45,7 +45,7 @@ packages_to_install=(
     # rustc
     # cargo
     # docker.io
-    podman
+    # podman
 )
 
 for package in "${packages_to_install[@]}"; do
