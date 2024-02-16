@@ -49,7 +49,7 @@ packages_to_install=(
 )
 
 for package in "${packages_to_install[@]}"; do
-    sudo apt install -y "$package" &
+    sudo apt-get install -y "$package" &
 done
 
 # Install zellij (tmux alternative)
