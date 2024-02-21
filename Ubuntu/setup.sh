@@ -51,11 +51,15 @@ for package in "${packages_to_install[@]}"; do
     sudo apt install -y "$package" &
 done
 
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo groupadd docker
+# Add user to the docker group
+sudo usermod -aG docker $USE
 # Install zellij (tmux alternative)
 # cargo install zellij exa
 
-# Add user to the docker group
-sudo usermod -aG docker $USER
+R
 # use zsh as default
 # sudo chsh —s $(which zsh) $USER
 
