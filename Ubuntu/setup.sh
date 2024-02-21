@@ -48,7 +48,7 @@ packages_to_install=(
 )
 
 for package in "${packages_to_install[@]}"; do
-    sudo apt-get install -y "$package" &
+    sudo apt install -y "$package" &
 done
 
 curl -fsSL https://get.docker.com -o get-docker.sh
