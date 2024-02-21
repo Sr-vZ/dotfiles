@@ -58,11 +58,7 @@ done
 sudo usermod -aG docker $USER
 # use zsh as default
 # sudo chsh —s $(which zsh) $USER
-if command -v curl >/dev/null 2>&1; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
-else
-  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
-fi
+
 
 wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/main/nerd-fonts-downloader.sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -83,5 +79,12 @@ sudo make install
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
-echo "System update and upgrade, installation, and configuration completed!"
+
 # curl -L https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/Ubuntu/setup.sh | sh
+
+if command -v curl >/dev/null 2>&1; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+else
+  sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
+fi
+echo "System update and upgrade, installation, and configuration completed!"
