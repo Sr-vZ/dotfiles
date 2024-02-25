@@ -63,7 +63,7 @@ sudo usermod -aG docker $USER
 # sudo chsh —s $(which zsh) $USER
 
 
-wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/main/nerd-fonts-downloader.sh
+wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/master/nf_downloader.sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.tmux.conf
 
