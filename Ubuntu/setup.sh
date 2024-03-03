@@ -85,6 +85,9 @@ rm -rf ~/.config/nvim/.git
 
 # curl -L https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/Ubuntu/setup.sh | sh
 
+# Install Lazydocker
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
 if command -v curl >/dev/null 2>&1; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 else
