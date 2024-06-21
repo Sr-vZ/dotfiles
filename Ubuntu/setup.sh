@@ -96,4 +96,8 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 #   sh -c "$(wget -O- https://raw.githubusercontent.com/romkatv/zsh4humans/v5/install)"
 # fi
 
+# Zinit installtion
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+
+
 echo "System update and upgrade, installation, and configuration completed!"
