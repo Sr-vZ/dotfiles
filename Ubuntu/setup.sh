@@ -10,10 +10,10 @@ EOF
 echo "Ubuntu Setup Script"
 
 # Update package lists
-sudo apt -o DPkg::Lock::Timeout=3 update -yq
+sudo apt update -yq
 
 # Upgrade installed packages
-sudo apt -o DPkg::Lock::Timeout=3 upgrade -yq
+sudo apt upgrade -yq
 
 # Install the specified packages with loading animation
 packages_to_install=(
@@ -48,7 +48,7 @@ packages_to_install=(
 )
 
 for package in "${packages_to_install[@]}"; do
-    sudo apt -o DPkg::Lock::Timeout=3 install -yq "$package" &
+    sudo apt -qq install "$package" -y & 
 done
 
 if [[ $(which docker) && $(docker --version) ]]; then
