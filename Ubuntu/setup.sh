@@ -48,7 +48,7 @@ packages_to_install=(
 )
 
 for package in "${packages_to_install[@]}"; do
-    sudo apt -qq install "$package" -y & 
+    sudo apt install "$package" -y & 
 done
 
 if [[ $(which docker) && $(docker --version) ]]; then
