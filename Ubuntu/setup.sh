@@ -52,7 +52,7 @@ for package in "${packages_to_install[@]}"; do
 done
 
 if [[ $(which docker) && $(docker --version) ]]; then
-    echo "Docker already installedr"
+    echo "Docker already installed"
     # command
   else
     echo "Install docker"
@@ -70,11 +70,14 @@ fi
 # use zsh as default
 # sudo chsh —s $(which zsh) $USER
 
-
-wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/master/nf_downloader.sh
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.tmux.conf
-
+if [[ $(which docker) && $(docker --version) ]]; then
+    echo "Neovim already installed"
+else
+    echo "Building Neovim"
+    wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/master/nf_downloader.sh
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.tmux.conf
+fi
 
 
 # wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
