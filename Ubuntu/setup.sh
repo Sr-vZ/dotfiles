@@ -51,11 +51,19 @@ for package in "${packages_to_install[@]}"; do
     sudo apt -o DPkg::Lock::Timeout=3 install -y "$package" &
 done
 
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo groupadd docker
-# Add user to the docker group
-sudo usermod -aG docker $USER
+if [[ $(which docker) && $(docker --version) ]]; then
+    echo "Docker already installedr"
+    # command
+  else
+    echo "Install docker"
+    # command
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh get-docker.sh
+    sudo groupadd docker
+    # Add user to the docker group
+    sudo usermod -aG docker $USER
+fi
+
 # Install zellij (tmux alternative)
 # cargo install zellij exa
 
