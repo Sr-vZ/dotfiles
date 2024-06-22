@@ -10,10 +10,10 @@ EOF
 echo "Ubuntu Setup Script"
 
 # Update package lists
-sudo apt -o DPkg::Lock::Timeout=3 update
+sudo apt -o DPkg::Lock::Timeout=3 update -yq
 
 # Upgrade installed packages
-sudo apt -o DPkg::Lock::Timeout=3 upgrade -y
+sudo apt -o DPkg::Lock::Timeout=3 upgrade -yq
 
 # Install the specified packages with loading animation
 packages_to_install=(
