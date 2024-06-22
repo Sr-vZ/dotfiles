@@ -74,21 +74,23 @@ if [[ $(which docker) && $(docker --version) ]]; then
     echo "Neovim already installed"
 else
     echo "Building Neovim"
-    wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/master/nf_downloader.sh
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.tmux.conf
+    
+    # Neovim latest stable version installation
+    git clone https://github.com/neovim/neovim.git
+    cd neovim
+    make CMAKE_BUILD_TYPE=RelWithDebInfo
+    sudo make install
 fi
 
+wget https://raw.githubusercontent.com/mcarvalho1/Nerd-fonts-Downloader-Script/master/nf_downloader.sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.tmux.conf
 
 # wget https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
 # tar xzvf nvim-linux64.tar.gz
 # alias nvim=./nvim-linux64/bin/nvim
 
-# Neovim latest stable version installation
-git clone https://github.com/neovim/neovim.git
-cd neovim
-make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
+
 
 # Lazyvim installation
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
