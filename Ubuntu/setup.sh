@@ -48,7 +48,7 @@ packages_to_install=(
 )
 
 for package in "${packages_to_install[@]}"; do
-    sudo apt install -y "$package" &
+    sudo apt -o DPkg::Lock::Timeout=60 install -y "$package" &
 done
 
 curl -fsSL https://get.docker.com -o get-docker.sh
