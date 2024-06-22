@@ -48,7 +48,7 @@ packages_to_install=(
 )
 
 for package in "${packages_to_install[@]}"; do
-    sudo apt -o DPkg::Lock::Timeout=3 install -y "$package" &
+    sudo apt -o DPkg::Lock::Timeout=3 install -yq "$package" &
 done
 
 if [[ $(which docker) && $(docker --version) ]]; then
