@@ -10,10 +10,10 @@ EOF
 echo "Ubuntu Setup Script"
 
 # Update package lists
-sudo apt update
+sudo apt -o DPkg::Lock::Timeout=3 update
 
 # Upgrade installed packages
-sudo apt upgrade -y
+sudo apt -o DPkg::Lock::Timeout=3 upgrade -y
 
 # Install the specified packages with loading animation
 packages_to_install=(
@@ -48,7 +48,7 @@ packages_to_install=(
 )
 
 for package in "${packages_to_install[@]}"; do
-    sudo apt -o DPkg::Lock::Timeout=60 install -y "$package" &
+    sudo apt -o DPkg::Lock::Timeout=3 install -y "$package" &
 done
 
 curl -fsSL https://get.docker.com -o get-docker.sh
