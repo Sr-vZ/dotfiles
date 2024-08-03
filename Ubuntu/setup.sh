@@ -70,7 +70,7 @@ fi
 # use zsh as default
 # sudo chsh —s $(which zsh) $USER
 
-if [[ $(which docker) && $(docker --version) ]]; then
+if [[ $(which nvim) && $(nvim --version) ]]; then
     echo "Neovim already installed"
 else
     echo "Building Neovim"
