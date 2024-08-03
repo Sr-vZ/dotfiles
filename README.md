@@ -9,3 +9,8 @@ No idea why I didn't thought about this sooner!!! 🤦‍♂️
 ```
 curl -L https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/Ubuntu/setup.sh | bash
 ```
+
+## Install generic install script
+```
+curl -L https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/generic_setup.sh | bash
+```
