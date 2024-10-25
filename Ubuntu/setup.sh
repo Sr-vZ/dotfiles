@@ -47,9 +47,12 @@ packages_to_install=(
     # podman
 )
 
-for package in "${packages_to_install[@]}"; do
-    sudo apt install "$package" -y & 
-done
+# for package in "${packages_to_install[@]}"; do
+#     sudo apt install "$package" -y & 
+# done
+
+# Install all packages at once
+sudo apt install -y "${packages_to_install[@]}"
 
 if [[ $(which docker) && $(docker --version) ]]; then
     echo "Docker already installed"
