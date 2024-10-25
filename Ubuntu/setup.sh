@@ -117,5 +117,8 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 # Zinit installtion
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
+# yq install for tmux plugin
+sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
+    chmod +x /usr/bin/yq
 
 echo "System update and upgrade, installation, and configuration completed!"
