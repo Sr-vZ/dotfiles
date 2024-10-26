@@ -47,10 +47,7 @@ packages_to_install=(
     # podman
 )
 
-# for package in "${packages_to_install[@]}"; do
-#     sudo apt install "$package" -y & 
-# done
-
+echo "Installing packages..."
 # Install all packages at once
 sudo apt install -y "${packages_to_install[@]}"
 
@@ -58,7 +55,7 @@ if [[ $(which docker) && $(docker --version) ]]; then
     echo "Docker already installed"
     # command
   else
-    echo "Install docker"
+    echo "Installing docker..."
     # command
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh get-docker.sh
@@ -76,7 +73,7 @@ fi
 if [[ $(which nvim) && $(nvim --version) ]]; then
     echo "Neovim already installed"
 else
-    echo "Building Neovim"
+    echo "Building Neovim..."
     
     # Neovim latest stable version installation
     git clone https://github.com/neovim/neovim.git
@@ -121,6 +118,7 @@ bash -c "$(curl --fail --show-error --silent --location https://raw.githubuserco
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     chmod +x /usr/bin/yq
 
+# zsh and bash config
 curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/.bashrc -o ~/.bashrc
 curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/.zshrc -o ~/.zshrc
 
