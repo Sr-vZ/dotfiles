@@ -121,4 +121,7 @@ bash -c "$(curl --fail --show-error --silent --location https://raw.githubuserco
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     chmod +x /usr/bin/yq
 
+curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/.bashrc -o ~/.bashrc
+curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/.zshrc -o ~/.zshrc
+
 echo "System update and upgrade, installation, and configuration completed!"
