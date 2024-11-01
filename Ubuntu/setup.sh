@@ -34,13 +34,13 @@ packages_to_install=(
     "fontconfig"
     "git"
     "ripgrep"
-    "fzf"
     "zsh"
     "bat"
     "tmux"
     "btop"
     "python3"
     "golang-go"
+    # "fzf"
     # rustc
     # cargo
     # docker.io
@@ -117,6 +117,11 @@ bash -c "$(curl --fail --show-error --silent --location https://raw.githubuserco
 # yq install for tmux plugin
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
     chmod +x /usr/bin/yq
+
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf 
+sudo ~/.fzf/install
+
 
 # zsh and bash config
 curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/.bashrc -o ~/.bashrc
