@@ -122,6 +122,11 @@ sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd6
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf 
 sudo ~/.fzf/install
 
+# Install uv pip replacement for python
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# posting is postman like tool for cli
+uv tool install --python 3.12 posting
 
 # zsh and bash config
 curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/.bashrc -o ~/.bashrc
