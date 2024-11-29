@@ -116,7 +116,7 @@ bash -c "$(curl --fail --show-error --silent --location https://raw.githubuserco
 
 # yq install for tmux plugin
 sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq &&\
-    chmod +x /usr/bin/yq
+    sudo chmod +x /usr/bin/yq
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf 
