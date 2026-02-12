@@ -70,17 +70,17 @@ fi
 # use zsh as default
 # sudo chsh —s $(which zsh) $USER
 
-if [[ $(which nvim) && $(nvim --version) ]]; then
-    echo "Neovim already installed"
-else
-    echo "Building Neovim..."
+# if [[ $(which nvim) && $(nvim --version) ]]; then
+#     echo "Neovim already installed"
+# else
+#     echo "Building Neovim..."
     
-    # Neovim latest stable version installation
-    git clone https://github.com/neovim/neovim.git
-    cd neovim
-    make CMAKE_BUILD_TYPE=RelWithDebInfo
-    sudo make install
-fi
+#     # Neovim latest stable version installation
+#     git clone https://github.com/neovim/neovim.git
+#     cd neovim
+#     make CMAKE_BUILD_TYPE=RelWithDebInfo
+#     sudo make install
+# fi
 
 [ ! -d ~/.tmux ] && mkdir ~/.tmux
 
@@ -92,12 +92,12 @@ curl https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/tmux/tmux.conf -o ~/.
 # tar xzvf nvim-linux64.tar.gz
 # alias nvim=./nvim-linux64/bin/nvim
 
-
-
+# fresh ide install
+curl https://raw.githubusercontent.com/sinelaw/fresh/refs/heads/master/scripts/install.sh | sh
 # Lazyvim installation
 # LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
+# git clone https://github.com/LazyVim/starter ~/.config/nvim
+# rm -rf ~/.config/nvim/.git
 
 # curl -L https://raw.githubusercontent.com/Sr-vZ/dotfiles/main/Ubuntu/setup.sh | sh
 
